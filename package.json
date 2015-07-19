@@ -1,0 +1,22 @@
+{
+  "name": "mitur",
+  "version": "1.0.0",
+  "description": "Proyecto orientado a incentivar el turismo y el comercio",
+  "main": "app.js",
+  "dependencies": {
+    "jade": "^1.11.0",
+    "express-session": "^1.11.3",
+    "passport": "^0.2.2",
+    "body-parser": "^1.13.2",
+    "multer": "^0.1.8",
+    "express": "^4.13.1",
+    "mongoose": "^4.0.7",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edwar Orlando Amaya Diaz",
+  "license": "ISC"
+}

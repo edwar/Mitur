@@ -1,0 +1,28 @@
+extends ../index-front.jade
+block contenido
+	div(class="jumbotron text-center sombra jumbo lineas")
+		div(class="pacifico grande") Encuentra lo mejor
+		p(class="lead") Todo lo que haz estado buscando solo lo encontraras en 
+			strong(class="pacifico chica") Mitur.co
+		a(href="/usuario/new" class="btn btn-success btn-lg chica quicksand") Unete 
+			span(class="glyphicon glyphicon-leaf" aria-hidden="true") 
+	div(class="col-xs-11 col-sm-5 col-md-3 targeta cafe sombra lineas")
+		div(class="titulo pacifico mediana text-center") Titulo largo
+		div(class="text-center targeta-contenido")
+			img(src="img/logo.png" class="img-responsive img-circle")
+		div(class="progress")
+			div(class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%") 0 votos
+			div(class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%") 0 votos
+		div(class="col-xs-6 pie text-center color" data-toggle="modal" data-target="#registro")
+			span(class="glyphicon glyphicon-eye-open")
+		div(class="col-xs-6 pie text-center color")
+			span(class="glyphicon glyphicon-send")
+block paginacion
+	nav
+		ul(class="pager")
+			li(class="disabled")
+				a(href="#")
+					span(aria-hidden="true") &larr; Anterior
+			li
+				a(href="#") Siguientes
+					span(aria-hidden="true") &rarr;

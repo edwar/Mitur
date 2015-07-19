@@ -1,0 +1,23 @@
+extends ../index-back.jade
+block contenido
+	div(class="col-xs-12 text-center top")
+		a(href="/producto/new" class="btn btn-success btn-lg chica") Nuevo producto #[span(class="glyphicon glyphicon-plus-sign")]
+		h1 Productos
+		div(class="table-responsive")
+			table(class="table table-hover table-bordered")
+				thead
+					tr(class="info")
+						th(class="text-center") Nombre
+						th(class="text-center") Descripción
+						th(class="text-center") Precio
+						th(class="text-center") Imagen
+						th(class="text-center") Editar
+						th(class="text-center") Eliminar
+				tbody
+					tr(class="success")
+						td(class="text-justify") kgctyfgcjhg
+						td(class="text-justify")  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae nemo amet corrupti, veritatis provident nobis. Esse aspernatur pariatur, at fuga ratione culpa praesentium itaque fugit quae eius aut, maxime repudiandae.
+						td(class="text-justify") $1000
+						td(class="text-justify") #[a(href="/imagen/new" class="btn btn-success") Agregar #[span(class="glyphicon glyphicon-plus-sign")]]
+						td(class="text-justify") #[a(class="btn btn-warning") Editar #[span(class="glyphicon glyphicon-pencil")]]
+						td(class="text-justify") #[a(class="btn btn-danger") Eliminar #[span(class="glyphicon glyphicon-trash")]]

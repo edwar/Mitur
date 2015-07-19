@@ -1,0 +1,23 @@
+extends ../index-front.jade
+block contenido
+	div(class="col-xs-10 col-md-4 col-md-offset-4 col-xs-offset-1 text-center cafe lineas top-form")
+		h1 Registrarse
+		form(method="POST" action="/empresa" class="top-form")
+			div(class="form-group")
+				input(type="text" class="form-control" name="usuario" placeholder="Nombre de usuario")
+			div(class="form-group")
+				input(type="password" class="form-control" name="contaseña" placeholder="Contraseña")
+			div(class="form-group")
+				input(type="email" class="form-control" name="correo" placeholder="Correo")
+			div(class="form-group")
+				select(class="form-control" onchange=("tipo();"))
+					option Tipo de usuario
+					option Usuario
+					option Publicante
+			div(class="checkbox text-left" id="text-disabled")
+				label
+					#[input( type="checkbox" id="estado" value="")] Estado
+			button(type="submit" class="btn btn-success left") Guardar  #[span(class="glyphicon glyphicon-send")]
+			button(type="button" onclick="limpiar();" class="btn btn-danger right") Limpiar  #[span(class="glyphicon glyphicon-refresh")]
+			div(class="top-form")
+	div(class="relleno")

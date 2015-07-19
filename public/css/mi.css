@@ -1,0 +1,89 @@
+	.azul{background: #49A0BB;}
+
+	.amarillo{background: #E38102;}
+
+	.cafe{background: #10AC80;}
+
+	.rojo{background: #F25240;}
+
+	.blanco{background: #F2F2F2;}
+
+	.pacifico{font-family: 'Pacifico', cursive;}
+
+	.quicksand{font-family: 'Quicksand', sans-serif;}
+
+	.targeta{margin: 4%;}
+
+	.targeta-contenido{border-bottom: solid 1px; padding-top: 1em; font-size: 1em}
+
+	.lateral{background: #49A0BB; color: #FFF}
+
+	.grande{font-size: 2.9em;}
+
+	.mediana{font-size: 2em;}
+
+	.chica{font-size: 1.3em;}
+
+	.body{padding-top: 6%}
+
+	.navbar-default .navbar-brand{color: #EEE;}
+
+	.sombra{box-shadow: 0.6em 0.6em 0.5em #808080}
+
+	.titulo{height: 45px; width: 100%; border-bottom: solid 1px; padding-top: 10px}
+
+	/**.icon{position: absolute; color: #808080; font-size: 2.5em; top: 0.3em; right: 0.4em;}
+
+	.icon:hover{color: #CB3131}**/
+
+	.pie{height: 35px; margin-top: 5px; padding-top: 2px; font-size: 2em; cursor: pointer;}
+
+	.left{margin-right: 1em; width: 40%}
+
+	.right{margin-left: 1em; width: 40%}
+
+	.top-15{padding-top:15%;}
+
+	.color-login{background-color: rgba(36, 80, 93, 0.99);}
+
+	.color-fondo{background-color: rgba(0, 0, 0, 0.8);}
+
+	.busqueda:focus{border-color: rgb(39, 237, 83); box-shadow: 0px 1px 1px rgba(140, 192, 150, 0.2) inset, 0px 0px 8px rgba(61, 228, 92, 0.6);}
+
+	.down:hover{color: #D9534F; background-color: #303030}
+
+	.up:hover{color: #5CB85C; background-color: #303030}
+
+	.color:hover{color: #90AA51; background-color: #303030}
+
+	.btn-verde{background-color: #47E9AA; border-color: #A9ADAC; color: #FFF}
+
+	.btn-verde:hover{color: #C9C9C9;}
+
+	.pager li > a{color: #FFFFFF; background-color: #808080}
+
+	.pager li > a:hover{color: #808080; background-color: #FFFFFF}
+
+	.lineas{background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 5%, transparent 5%, transparent 10%, rgba(255, 255, 255, 0.15) 10%, rgba(255, 255, 255, 0.15) 15%, transparent 15%, transparent 20%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 30%, rgba(255, 255, 255, 0.15) 30%, rgba(255, 255, 255, 0.15) 35%, transparent 35%, transparent 40%, rgba(255, 255, 255, 0.15) 40%, rgba(255, 255, 255, 0.15) 45%, transparent 45%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 55%, transparent 55%, transparent 60%, rgba(255, 255, 255, 0.15) 60%, rgba(255, 255, 255, 0.15) 65%, transparent 65%, transparent 70%, rgba(255, 255, 255, 0.15) 70%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent 80%, rgba(255, 255, 255, 0.15) 80%, rgba(255, 255, 255, 0.15) 85%, transparent 85%, transparent 90%, rgba(255, 255, 255, 0.15) 90%, rgba(255, 255, 255, 0.15) 95%, transparent 95%, transparent);}
+
+	li{cursor: pointer;}
+
+	.top-form{margin-top: 1.5em;}
+
+	.input-bg-none{background-color: rgba(255, 255, 255, 0); border: none;}
+
+	.relleno{margin-bottom: 48%}
+
+	.color-contacto{background-image: url("../img/1.jpg");}
+
+	.color-info{background-image: url("../img/3.jpg");}
+
+	.color-llegar{background-image: url("../img/4.jpg");}
+
+	.text-blanco{color: #FFFFFF}
+
+	.top{margin-top: 2em;}
+
+	.avatar{width: 40px; height: 40px; margin-bottom: -15px; margin-top: -15px;}
+
+	.jumbo{background-color: rgba(255, 255, 255, 0.42);}

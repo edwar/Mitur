@@ -1,0 +1,30 @@
+extends ../index-back.jade
+block contenido
+	div(class="col-xs-11 col-md-6 col-md-offset-3 col-xs-offset-1 text-center amarillo lineas")
+		h1 Agregar Empresa
+		form(method="POST" action="/empresa" class="top-form")
+			div(class="form-group")
+				input(type="text" class="form-control" name="nombre" placeholder="Nombre de la empresa")
+			div(class="form-group")
+				input(type="text" class="form-control" name="slogan" placeholder="Slogan de la empresa")
+			div(class="form-group")
+				input(type="file" class="form-control input-bg-none" name="imagen")
+				p(class="help-block") Logo de la empresa.
+			div(class="form-group")
+				textarea(type="text" class="form-control" name="descripcion" placeholder="A que se dedica la empresa...")
+			div(class="form-group")
+				input(type="text" class="form-control" name="telefono" placeholder="Numero de telefono")
+			div(class="form-group")
+				input(type="text" class="form-control" name="direccion" placeholder="Direccion")
+			div(class="form-group")
+				input(type="email" class="form-control" name="correo" placeholder="Correo")
+			div(class="form-group")
+				input(type="text" class="form-control" name="web" placeholder="Direccion web")
+			div(class="form-group col-md-6 col-md-offset-3")
+				input(type="text" id="lat" class="form-control" name="latitud" placeholder="Latitud" disabled)
+				input(type="text" id="lon" class="form-control" name="longitud" placeholder="Longitud" disabled)
+				button(type="button" onclick="coordenadas();" class="btn btn-info") Latitud y longitud  #[span(class="glyphicon glyphicon-globe")]
+			button(type="submit" class="btn btn-success left") Guardar  #[span(class="glyphicon glyphicon-send")]
+			button(type="button" onclick="limpiar();" class="btn btn-danger right") Limpiar  #[span(class="glyphicon glyphicon-refresh")]
+			div(class="top-form")
+			
