@@ -1,11 +1,12 @@
-extends ../index-front.jade
+extends ../base.jade
 block contenido
 	div(class="jumbotron text-center sombra jumbo lineas")
 		div(class="pacifico grande") Encuentra lo mejor
 		p(class="lead") Todo lo que haz estado buscando solo lo encontraras en 
 			strong(class="pacifico chica") Mitur.co
-		a(href="/usuario/new" class="btn btn-success btn-lg chica quicksand") Unete 
-			span(class="glyphicon glyphicon-leaf" aria-hidden="true") 
+		if !isAuthenticated
+			a(href="/usuario/new" class="btn btn-success btn-lg chica quicksand") Unete 
+				span(class="glyphicon glyphicon-leaf" aria-hidden="true") 
 	div(class="col-xs-11 col-sm-5 col-md-3 targeta cafe sombra lineas")
 		div(class="titulo pacifico mediana text-center") Titulo largo
 		div(class="text-center targeta-contenido")
