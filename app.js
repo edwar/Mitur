@@ -7,6 +7,7 @@ var passport = require('passport');
 var passportLocal = require('passport-local');
 var LocalStrategy = require('passport-local').Strategy;
 var bCrypt = require('bcrypt-nodejs');
+var nodemailer = require('nodemailer');
 
 var app = express();
 
@@ -285,11 +286,49 @@ app.post("/buscar",function (solicitud, respuesta) {
 	respuesta.render("frontend/buscar",{isAuthenticated:solicitud.isAuthenticated()});
 });
 
-app.get('/salir', function(req, res) {
-  req.logout();
-  res.redirect('/');
-});
+app.post("/enviar",function (solicitud, respuesta){
+	// create reusable transporter object using SMTP transport
+	var transporter = nodemailer.createTransport({
+	    service: 'Gmail',
+	    auth: {
+	        user: 'miturcolombia@gmail.com',
+	        pass: 'controlmitur'
+	    }
+	});
 
-app.listen(app.get('port'), function(){
-  console.log(("Express server listening on port " + app.get('port')))
+	// NB! No need to recreate the transporter object. You can use
+	// the same transporter object for all e-mails
+
+	// setup e-mail data with unicode symbols
+	var mailOptions = {
+	    from: solicitud.body.usuario+' ✔ <'+solicitud.body.remitente+'>', // sender address
+	    to: solicitud.body.destinatario, // list of receivers
+	    subject: solicitud.body.asunto+' ✔', // Subject line
+	    text: solicitud.body.mensaje, // plaintext body
+	};
+
+	// send mail with defined transport object
+	transporter.sendMail(mailOptions, function(error, info){
+		var mensage = "";
+		var estado = true;
+		var post = true;
+	    if(error){
+	        console.log(error);
+	        mensage = "Error al enviar el correo";
+	        estado = false;
+	    }else{
+	        console.log('Message sent: ' + info.response);
+	        mensage = "Mensage enviado...";
+	    }
+	    respuesta.render("frontend/index",{Mensage:mensage,Estado:estado,Post:post})
+	});
+	});
+
+	app.get('/salir', function(req, res) {
+	  req.logout();
+	  res.redirect('/');
+	});
+
+	app.listen(app.get('port'), function(){
+	  console.log(("Express server listening on port " + app.get('port')))
 });

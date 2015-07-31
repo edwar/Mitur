@@ -4,13 +4,14 @@
   "description": "Proyecto orientado a incentivar el turismo y el comercio",
   "main": "app.js",
   "dependencies": {
-    "jade": "^1.11.0",
-    "express-session": "^1.11.3",
-    "passport": "^0.2.2",
     "body-parser": "^1.13.2",
-    "multer": "^0.1.8",
     "express": "^4.13.1",
+    "express-session": "^1.11.3",
+    "jade": "^1.11.0",
     "mongoose": "^4.0.7",
+    "multer": "^0.1.8",
+    "nodemailer": "^1.4.0",
+    "passport": "^0.2.2",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {},
