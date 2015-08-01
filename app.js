@@ -166,16 +166,19 @@ var Producto = mongoose.model("Producto",productoSchema);
 var Imgen = mongoose.model("imagen", imagenSchema);
 
 app.get("/", function (solicitud, respuesta) {
-	console.log(solicitud.isAuthenticated())
 	respuesta.render("frontend/index",{isAuthenticated:solicitud.isAuthenticated()});
 });
 
 //Empresas
 app.get("/empresa/new",function (solicitud, respuesta) {
+	if (!solicitud.isAuthenticated())
+		respuesta.redirect("/");
 	respuesta.render("backend/empresa",{isAuthenticated:solicitud.isAuthenticated()});
 });
 
 app.post("/empresa",function (solicitud, respuesta) {
+	if (!solicitud.isAuthenticated())
+		respuesta.redirect("/");
 	//Logica para guardar el registro
 	var data={
 		nombre:solicitud.body.nombre,
@@ -202,6 +205,8 @@ app.get("/empresas",function (solicitud, respuesta) {
 
 //Productos
 app.get("/producto/new",function (solicitud, respuesta) {
+	if (!solicitud.isAuthenticated())
+		respuesta.redirect("/");
 	respuesta.render("backend/producto",{isAuthenticated:solicitud.isAuthenticated()});
 });
 
@@ -226,6 +231,8 @@ app.get("/productos",function (solicitud, respuesta) {
 
 //imagenes
 app.get("/imagen/new",function (solicitud, respuesta) {
+	if (!solicitud.isAuthenticated())
+		respuesta.redirect("/");
 	respuesta.render("backend/imagen",{isAuthenticated:solicitud.isAuthenticated()});
 });
 
@@ -273,13 +280,9 @@ app.post('/usuario/new', passport.authenticate('signup', {
   }));
 
 app.post('/login', passport.authenticate('login', {
-    successRedirect: '/',
+    successRedirect: '/perfil',
     failureRedirect: '/usuario/new'
   }));
-
-app.post("/contactanos",function (solicitud, respuesta) {
-	respuesta.render("frontend/index",{isAuthenticated:solicitud.isAuthenticated()});
-});
 
 app.post("/buscar",function (solicitud, respuesta) {
 
@@ -322,13 +325,17 @@ app.post("/enviar",function (solicitud, respuesta){
 	    }
 	    respuesta.render("frontend/index",{Mensage:mensage,Estado:estado,Post:post})
 	});
-	});
+});
 
-	app.get('/salir', function(req, res) {
-	  req.logout();
-	  res.redirect('/');
-	});
+app.get('/perfil',function(solicitud,respuesta){
+	respuesta.render("backend/perfil",{isAuthenticated:solicitud.isAuthenticated()})
+});
 
-	app.listen(app.get('port'), function(){
-	  console.log(("Express server listening on port " + app.get('port')))
+app.get('/salir', function(req, res) {
+	req.logout();
+	res.redirect('/');
+});
+
+app.listen(app.get('port'), function(){
+	console.log(("Express server listening on port " + app.get('port')))
 });

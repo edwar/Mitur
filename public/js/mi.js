@@ -29,3 +29,4 @@ function tipo () {
 		text.removeClass("disabled");
 	};
 }
+$(":file").filestyle({buttonBefore: "true", buttonName: "btn-primary", buttonText: " Logo de la empresa", iconName: "glyphicon-plus-sign"});

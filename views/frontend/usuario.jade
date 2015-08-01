@@ -4,11 +4,11 @@ block contenido
 		h1 Registrarse
 		form(method="POST" action="/usuario/new" class="top-form")
 			div(class="form-group")
+				input(type="email" class="form-control" name="correo" placeholder="Correo")
+			div(class="form-group")
 				input(type="text" class="form-control" name="username" placeholder="Nombre de usuario")
 			div(class="form-group")
 				input(type="password" class="form-control" name="password" placeholder="Contraseña")
-			div(class="form-group")
-				input(type="email" class="form-control" name="correo" placeholder="Correo")
 			button(type="submit" class="btn btn-success left") Guardar  #[span(class="glyphicon glyphicon-send")]
 			button(type="button" onclick="limpiar();" class="btn btn-danger right") Limpiar  #[span(class="glyphicon glyphicon-refresh")]
 			div(class="top-form")
