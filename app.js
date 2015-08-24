@@ -29,19 +29,19 @@ app.use(passport.session());
 passport.serializeUser(function(user, done) {
   done(null, user._id);
 });
- 
+
 passport.deserializeUser(function(id, done) {
-  Usuario.findById(id, function(err, user) {
-    done(err, user);
-  });
+	Usuario.findById(id, function(err, user) {
+		done(err, user);
+	});
 });
 
 passport.use('login', new LocalStrategy({
     passReqToCallback : true
   },
-  function(req, username, password, done) { 
+  function(req, username, password, done) {
     // check in mongo if a user with username exists or not
-    Usuario.findOne({ 'username' :  username }, 
+    Usuario.findOne({ 'username' :  username },
       function(err, user) {
         // In case of any error, return using the done method
         if (err)
@@ -49,14 +49,14 @@ passport.use('login', new LocalStrategy({
         // Username does not exist, log error & redirect back
         if (!user){
           console.log('User Not Found with username '+username);
-          return done(null, false);                 
+          return done(null, false);
         }
-        // User exists but wrong password, log the error 
+        // User exists but wrong password, log the error
         if (!isValidPassword(user, password)){
           console.log('Invalid Password');
           return done(null, false);
         }
-        // User and password both match, return user from 
+        // User and password both match, return user from
         // done method which will be treated like success
         return done(null, user);
       }
@@ -87,21 +87,21 @@ passport.use('signup', new LocalStrategy({
           newUser.username = username;
           newUser.password = createHash(password);
           newUser.correo = req.param('correo');
- 
+
           // save the user
           newUser.save(function(err) {
             if (err){
-              console.log('Error in Saving user: '+err);  
-              throw err;  
+              console.log('Error in Saving user: '+err);
+              throw err;
             }
-            console.log('User Registration succesful');    
+            console.log('User Registration succesful');
             return done(null, newUser);
           });
         }
       });
     };
-     
-    // Delay the execution of findOrCreateUser and execute 
+
+    // Delay the execution of findOrCreateUser and execute
     // the method in the next tick of the event loop
     process.nextTick(findOrCreateUser);
   }));
